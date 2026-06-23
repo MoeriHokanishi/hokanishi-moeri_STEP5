@@ -53,7 +53,7 @@ function hideShowButton(){
 add.addEventListener('click',function(){
 
     if (table.rows.length >= 3){
-        table.deleteRow(0);
+        table.deleteRow(1);
     }
 
     var newRow = document.createElement('tr');
