@@ -42,7 +42,7 @@ function getRow(){
 }
 
 function hideShowButton(){
-    if (table.rows.length >= 3){
+    if (table.rows.length >= 4){
         show.style.display = "none";
     }else{
         show.style.display ='inline-block';
@@ -52,15 +52,15 @@ function hideShowButton(){
 
 add.addEventListener('click',function(){
 
-    if (table.rows.length >= 3){
-        table.deleteRow(0);
+    if (table.rows.length >= 4){
+        table.deleteRow(1);
     }
 
     var newRow = document.createElement('tr');
     var contentCell = document.createElement('td');
     var deleteButton = document.createElement('button');
     var actionCell = document.createElement('td');
-    
+
     contentCell.textContent = input.value;
     deleteButton.textContent = '削除';
 
@@ -69,18 +69,18 @@ add.addEventListener('click',function(){
 
         getRow();
         hideShowButton();
-    
+
     });
 
     actionCell.appendChild(deleteButton);
-        
+
     newRow.appendChild(contentCell);
     newRow.appendChild(actionCell);
 
     table.appendChild(newRow);
 
     getRow();
-    hideShowButton();   
+    hideShowButton();
 });
 
 
